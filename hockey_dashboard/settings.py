@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     'mainpp.apps.MainppConfig',
+    'user_auth.apps.UserAuthConfig',
 ]
 
 MIDDLEWARE = [
@@ -107,9 +108,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Almaty'
 
 USE_I18N = True
 
@@ -128,3 +129,9 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
+
+SITE_ID = 1
+
+AUTH_USER_MODEL = 'user_auth.User'

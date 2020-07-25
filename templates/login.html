@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Title</title>
+
+
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        body {
+            background: url("/static/images/back.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            display: block;
+        }
+    </style>
+</head>
+<body class="text-center">
+<div class="header-text"><h1>Электронная система тестирования арбитров </h1>
+    <h1>Казахстанских хоккейных лиг</h1></div>
+
+<form class="form-signin" style="background-color: #f5f8fc; margin-top: 130px" action="." method="post">
+{{ form.as_p }}
+    {% csrf_token %}
+
+{#    <div class="form-group">#}
+{#        <input type="text" id="inputLogin" class="form-control" placeholder="ЛОГИН" required="" autofocus="">#}
+{#    </div>#}
+{##}
+{#    <div class="form-group">#}
+{#        <input type="password" id="inputPassword" class="form-control" placeholder="ПАРОЛЬ" required="">#}
+{#    </div>#}
+
+{#    <button class="btn btn-lg btn-primary btn-block" type="submit">ВОЙТИ</button>#}
+    <input type="submit" class="btn btn-lg btn-primary btn-block" value="ВОЙТИ">
+</form>
+<div class="logo">
+
+</div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+<script src="{% static 'js/index.js' %}"></script>
+</html>
