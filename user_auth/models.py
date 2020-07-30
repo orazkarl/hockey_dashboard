@@ -1,17 +1,24 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from os.path import splitext
+from transliterate import slugify
 
 
 # Create your models here.
+def slugify_upload(instance, filename):
+    name, ext = splitext(filename)
+    return slugify(name) + ext
 
 class User(AbstractUser):
     phone = models.CharField('Телефон', max_length=100)
-    avatar = models.ImageField('Фото', upload_to='avatars')
+    avatar = models.ImageField('Фото', upload_to=slugify_upload)
     dob = models.DateField('Дата рожения', null=True)
     is_access = models.BooleanField('Доступ в тестирование', default=False)
 
+
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
 
 
 class UserFile(models.Model):
