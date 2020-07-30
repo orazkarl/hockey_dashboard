@@ -130,6 +130,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'mediafiles')
 
+
+
+
+DATA_UPLOAD_MAX_MEMORY_SIZE = 10*1024*1024
 SITE_ID = 1
 
 AUTH_USER_MODEL = 'user_auth.User'
