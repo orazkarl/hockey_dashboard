@@ -14,7 +14,7 @@ def start_exam(request):
     user = request.user
     user.is_access = False
     user.save()
-    return redirect('http://exam.icehockey.kz/testoriginal.html')
+    return redirect('http://examtest.icehockey.kz/')
 
 
 @method_decorator(login_required(login_url='/login/'), name='dispatch')
