@@ -124,7 +124,6 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    '/home/venv/lib/python3.6/site-packages/django/contrib/admin/static',
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
