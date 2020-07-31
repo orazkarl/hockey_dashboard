@@ -7,7 +7,10 @@ from transliterate import slugify
 # Create your models here.
 def slugify_upload(instance, filename):
     name, ext = splitext(filename)
-    return slugify(name) + ext
+    if slugify(name) == None:
+        return str(name) + str(ext)
+    else:
+        return slugify(name) + str(ext)
 
 class User(AbstractUser):
     phone = models.CharField('Телефон', max_length=100)
