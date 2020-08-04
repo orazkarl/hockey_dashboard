@@ -17,7 +17,7 @@ class User(AbstractUser):
     avatar = models.ImageField('Фото', upload_to=slugify_upload)
     dob = models.DateField('Дата рожения', null=True)
     is_access = models.BooleanField('Доступ в тестирование', default=False)
-
+    ip_address = models.CharField('IP адрес', max_length=25, null=True, blank=True)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
@@ -27,7 +27,7 @@ class User(AbstractUser):
 class UserFile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Пользователь', related_name='file')
     title_file = models.CharField('Названия документа', max_length=150)
-    file = models.FileField('Файл', null=True, blank=True, upload_to='docs')
+    file = models.FileField('Файл', null=True, blank=True, upload_to=slugify_upload)
     date_test = models.DateTimeField('Дата тестирования', null=True, blank=True)
 
     class Meta:

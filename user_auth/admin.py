@@ -32,14 +32,14 @@ class UserAdmin(DjangoUserAdmin):
         }),
     )
     list_display = ['username', 'first_name', 'last_name', 'email', 'phone', 'dob', 'date_joined', 'last_login',
-                    'is_access']
+                    'is_access', 'ip_address']
 
     fieldsets = (
         (None,
          {'fields': ('username', 'email')}),
         (('Личная информация'),
          {'fields': (
-             'first_name', 'last_name', 'phone', 'dob', 'avatar')}),
+             'first_name', 'last_name', 'phone', 'dob', 'avatar', 'ip_address')}),
         (('Права доступа'), {
             'fields': ('is_active', 'is_access',),
         }),
