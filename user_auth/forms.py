@@ -1,5 +1,7 @@
 from django import forms
-from allauth.account.forms import LoginForm
+from allauth.account.forms import LoginForm, ChangePasswordForm
+
+
 
 class CustomLoginForm(LoginForm):
     def __init__(self, *args, **kwargs):
@@ -9,3 +11,6 @@ class CustomLoginForm(LoginForm):
             if visible.name == 'remember':
                 visible.field.widget.attrs['class'] = 'custom-control-input'
             visible.label = None
+
+
+
